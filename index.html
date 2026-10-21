@@ -33,7 +33,7 @@ button{font:inherit;cursor:pointer}
 .cover .hint{font-family:var(--sans);font-size:12px;letter-spacing:.3em;color:#b06a7a;animation:breathe 2.4s ease-in-out infinite}
 .cover .to{font-family:var(--script);font-size:clamp(30px,8vw,40px);color:#a24d60;margin:0;text-align:center}
 @keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
-.env{position:relative;width:min(84vw,360px);aspect-ratio:1.45;perspective:1200px;animation:floatE 4s ease-in-out infinite}
+.env{position:relative;width:min(84vw,360px,calc(52vh * 1.45));aspect-ratio:1.45;perspective:1200px;animation:floatE 4s ease-in-out infinite}
 @keyframes floatE{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
 .cover.open .env{animation:none}
 .env-back{position:absolute;inset:0;background:#e9b3bc;border-radius:6px;box-shadow:0 20px 40px rgba(162,77,96,.25)}
@@ -75,7 +75,7 @@ main{position:relative;z-index:1}
 .flower.tl{top:-10px;left:-24px}
 .flower.br{bottom:-10px;right:-24px;transform:rotate(180deg)}
 .names{font-family:var(--script);font-weight:400;color:var(--rose-d);line-height:1.05;margin:10px 0}
-.names .n{display:block;font-size:clamp(50px,14.5vw,84px)}
+.names .n{display:block;font-size:clamp(40px,13vw,84px)}
 .names .amp{display:block;font-size:clamp(36px,9vw,52px);color:var(--gold);margin:-4px 0}
 .date-chip{display:inline-flex;gap:14px;align-items:center;font-family:var(--sans);font-size:13px;letter-spacing:.25em;color:var(--ink);padding:12px 22px;border-radius:999px;border:1px solid var(--line);background:var(--card);margin-top:14px}
 .date-chip i{width:5px;height:5px;border-radius:50%;background:var(--rose);display:block}
@@ -103,7 +103,7 @@ main{position:relative;z-index:1}
 .when{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
 .when div{background:var(--bg2);border-radius:18px;padding:16px 8px}
 .when .k{font-family:var(--sans);font-size:10px;letter-spacing:.25em;color:var(--rose)}
-.when .v{font-size:38px;font-weight:500;line-height:1.2;color:var(--rose-d)}
+.when .v{font-size:clamp(24px,6.6vw,38px);font-weight:500;line-height:1.2;color:var(--rose-d)}
 .when .s{font-size:15px;font-style:italic;color:var(--muted)}
 
 .count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
@@ -116,8 +116,7 @@ main{position:relative;z-index:1}
 /* venue */
 .venue-art{border-radius:20px;overflow:hidden;margin-bottom:20px;background:linear-gradient(180deg,#f8d9de,#fbeaea)}
 .venue-art svg{display:block;width:100%;height:auto}
-.vname{font-family:var(--script);font-size:40px;color:var(--rose-d);margin:0;line-height:1.2}
-.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.vname{font-family:var(--script);font-size:clamp(32px,10vw,40px);color:var(--rose-d);margin:0;line-height:1.2}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 12px;border-radius:999px;font-family:var(--sans);font-size:12px;letter-spacing:.15em;text-decoration:none;border:1px solid var(--rose);color:var(--rose-d);background:transparent;transition:all .25s}
 .btn:hover{background:var(--rose);color:#fff}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#f2b8c3;border-color:#f2b8c3}}
@@ -139,7 +138,7 @@ main{position:relative;z-index:1}
 .err{font-family:var(--sans);font-size:12px;color:#c0392b;min-height:1.2em;margin:6px 0 10px}
 .thanks{display:none}
 .thanks.show{display:block;animation:pop .6s ease}
-.thanks .big{font-family:var(--script);font-size:60px;color:var(--rose-d);margin:0;line-height:1.1}
+.thanks .big{font-family:var(--script);font-size:clamp(44px,14vw,60px);color:var(--rose-d);margin:0;line-height:1.1}
 .thanks .ico{font-size:48px;animation:bob 2s ease-in-out infinite}
 
 .burst{position:fixed;pointer-events:none;z-index:50;font-size:22px;animation:fly 1.6s ease-out forwards}
@@ -149,7 +148,7 @@ main{position:relative;z-index:1}
 footer{text-align:center;padding:60px 22px calc(70px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,var(--bg2),#f3c9d0);position:relative;overflow:hidden}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) footer{background:linear-gradient(180deg,var(--bg2),#3e1f29)}}
 :root[data-theme="dark"] footer{background:linear-gradient(180deg,var(--bg2),#3e1f29)}
-footer .mono{font-family:var(--script);font-size:80px;color:var(--rose-d);line-height:1}
+footer .mono{font-family:var(--script);font-size:clamp(60px,18vw,80px);color:var(--rose-d);line-height:1}
 footer small{display:block;margin-top:28px;font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--muted)}
 
 /* scroll reveal */
@@ -168,6 +167,23 @@ footer small{display:block;margin-top:28px;font-family:var(--sans);font-size:11p
 @keyframes pulseM{0%{box-shadow:0 0 0 0 rgba(201,111,128,.55)}100%{box-shadow:0 0 0 16px rgba(201,111,128,0)}}
 @keyframes spinN{to{transform:rotate(360deg)}}
 .toast{bottom:calc(80px + env(safe-area-inset-bottom,0px))!important}
+/* kichik ekranlar */
+@media (max-width:380px){
+  .sec{padding:56px 16px}
+  .panel{padding:24px 14px;border-radius:20px}
+  .date-chip{gap:10px;padding:10px 16px;font-size:12px;letter-spacing:.16em}
+  .count{gap:6px}
+  .count div{border-radius:14px;padding:14px 0 10px}
+  .count span{font-size:9px;letter-spacing:.08em}
+  .when{gap:8px}
+  .choice button{font-size:12px}
+  .it{font-size:19px}
+}
+@media (max-width:330px){.when{grid-template-columns:1fr}}
+/* yotiq telefon: konvert sig'ishi uchun */
+@media (max-height:520px){.cover{gap:14px;padding:12px}.cover .to{font-size:28px}.seal{width:60px;height:60px;font-size:20px}}
+/* katta ekranlar */
+@media (min-width:768px){.sec{padding:96px 32px}.in{max-width:560px}.flower{width:260px}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.reveal-name .n,.reveal-name .amp{clip-path:none!important}}
 </style>
 </head>
@@ -259,7 +275,7 @@ footer small{display:block;margin-top:28px;font-family:var(--sans);font-size:11p
 
   <section class="sec">
     <div class="in">
-      <p class="kicker">MANZIL</p>
+      <p class="kicker">TO'YXONA</p>
       <h2 class="title">Qayerda?</h2>
       <div class="heartline"><svg><use href="#heart"/></svg></div>
       <div class="panel">
@@ -274,11 +290,7 @@ footer small{display:block;margin-top:28px;font-family:var(--sans);font-size:11p
           </svg>
         </div>
         <p class="vname">Shoxona Bazmgohi</p>
-        <p class="it" style="font-size:18px">Sizni aynan shu yerda kutamiz</p>
-        <div class="btn-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://yandex.uz/maps/?text=Shoxona%20Bazmgohi">YANDEX MAP</a>
-          <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shoxona%20Bazmgohi">GOOGLE MAP</a>
-        </div>
+        <p class="it" style="font-size:18px;margin-top:6px">Sizni aynan shu yerda kutamiz</p>
       </div>
     </div>
   </section>
